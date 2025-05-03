@@ -25,10 +25,10 @@ internal class Program
             {
                 case "1":
                     CadastrarProduto();
-                    break
+                    break;
                 case "2":
                     ConsultarEstoque();
-                    break
+                    break;
                 case "3":
                     RegistrarEntrada();
                     break;
@@ -45,32 +45,110 @@ internal class Program
 
             }
 
-
-
-
-
         }
 
     }
 
-
     static void CadastrarProduto()
     {
-
+        Console.WriteLine();
+        Console.WriteLine("Nome: ");
+        string nome = Console.ReadLine();
+        Console.WriteLine("Tipo: ");
+        string tipo = Console.ReadLine();
+        Console.WriteLine("Safra: ");
+        string safra = Console.ReadLine();
+        Console.WriteLine("País");
+        string pais = Console.ReadLine();
+        Console.WriteLine("Preço de venda: ");
+        decimal precoVenda = decimal.Parse(Console.ReadLine());
+        Console.WriteLine("Quantidade: ");
+        int quantidade = int.Parse(Console.ReadLine());
+        Produto produto = new Produto(nome,tipo,safra,pais,precoVenda,quantidade);
+        produtos.Add(produto);
+        Console.WriteLine("Vinho cadastrado com sucesso!");
     }
 
     static void ConsultarEstoque()
     {
+        Console.WriteLine();
+        Console.WriteLine("Nome do vinho para consultar estoque: ");
+        string nome = Console.ReadLine();
+        bool encontrado = false;
+
+        foreach (Produto produto in produtos)
+        {
+            if (produto.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine($"Estoque de'{produto.Nome}': {produto.Quantidade} unidade");
+                encontrado = true;
+            }
+
+        }
+        if (!encontrado)
+        {
+            Console.WriteLine("Vinho não encontrado no estoque");
+        }
 
     }
 
     static void RegistrarEntrada()
     {
+        Console.WriteLine("Digite o nome do vinho para registrar entrada de estoque: ");
+        string nome = Console.ReadLine();
+
+        bool encontrado = false;
+
+        foreach (Produto produto in produtos)
+        {
+            if (produto.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Quantidade para adicionar: ");
+                int quantidade = int.Parse(Console.ReadLine());
+                produto.Quantidade = produto.Quantidade + quantidade;
+                Console.WriteLine($"Entrada registrada com sucesso. Novo estoque de'{produto.Nome}': {produto.Quantidade} unidade");
+                encontrado = true;
+            }
+
+        }
+        if (!encontrado)
+        {
+            Console.WriteLine("Vinho não encontrado no estoque");
+        }
+
 
     }
 
     static void RegistrarSaida()
     {
+        Console.WriteLine("Digite o nome do vinho para registrar saída de estoque: ");
+        string nome = Console.ReadLine();
 
+        bool encontrado = false;
+
+        foreach (Produto produto in produtos)
+        {
+            if (produto.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Quantidade para retirar: ");
+                int quantidade = int.Parse(Console.ReadLine());
+
+                if (quantidade <= produto.Quantidade) {
+                    produto.Quantidade -= quantidade;
+                    Console.WriteLine($"Sa ída registrada com sucesso. Novo estoque de'{produto.Nome}': {produto.Quantidade} unidade");                    
+                }
+                else
+                {
+                    Console.WriteLine($"Erro: saída maior que o estoque atual: {produto.Quantidade}");
+                }
+                encontrado = true;
+                break;
+            }
+
+        }
+        if (!encontrado)
+        {
+            Console.WriteLine("Vinho não encontrado no estoque");
+        }
     }
 }

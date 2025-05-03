@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EstoqueVinheriaAgnello")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31e27aeb4799fde7c064c76ba374feda27da2b5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("EstoqueVinheriaAgnello")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EstoqueVinheriaAgnello")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
