@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EstoqueVinheriaAgnello": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

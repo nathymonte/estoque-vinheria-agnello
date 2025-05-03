@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hq3X5/k+4CE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DELL\\OneDrive\\Documentos\\FIAP\\2025 - Ano 3\\projetos-net\\EstoqueVinheriaAgnello\\EstoqueVinheriaAgnello.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"
+  ],
+  "logs": []
+}
